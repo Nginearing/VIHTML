@@ -40,7 +40,6 @@ function convertCustomHTML(config) {
         }
       }
  
-      // Move child nodes
       while (el.firstChild) {
         newEl.appendChild(el.firstChild);
       }
