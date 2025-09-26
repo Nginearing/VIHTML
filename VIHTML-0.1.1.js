@@ -14,10 +14,10 @@ const htmlConfig = {
   },
   attributes: {
     'kran': 'src',
-    'charset': 'charset',
-    'name': 'name',
-    'content': 'content',
-    'alt': 'alt'
+    'alfakaban': 'charset',
+    'namae': 'name',
+    'shiruzma': 'content',
+    'impla': 'alt'
   }
 };
  
