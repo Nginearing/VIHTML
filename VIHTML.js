@@ -44,6 +44,7 @@ function convertCustomHTML(config) {
  
       while (el.firstChild) {
         newEl.appendChild(el.firstChild);
+        console.log("Child exists");
       }
  
       if (newTagName === 'head') {
