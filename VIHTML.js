@@ -59,15 +59,22 @@ function convertCustomHTML(config) {
       }
 
       const parent = el.parentNode;
-
+      
       if (voidElements.includes(newTagName)) {
+        // Insert the void element
         parent.insertBefore(newEl, el);
-
+      
+        // Anchor: always insert after <br>, not after last inserted child
+        let insertPoint = newEl.nextSibling;
+      
+        // Move children **after the <br>**, preserving order
         while (el.firstChild) {
-          parent.insertBefore(el.firstChild, newEl.nextSibling);
+          parent.insertBefore(el.firstChild, insertPoint);
         }
-
+      
         el.remove();
+      }
+        
       } else {
         while (el.firstChild) {
           newEl.appendChild(el.firstChild);
