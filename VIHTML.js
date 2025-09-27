@@ -38,7 +38,7 @@ const htmlConfig = {
     'impla': 'alt'
   }
 };
- 
+
 function convertCustomHTML(config) {
   document.querySelectorAll('*').forEach(el => {
     const tagName = el.tagName.toLowerCase();
@@ -62,7 +62,7 @@ function convertCustomHTML(config) {
 
       if (voidElements.includes(newTagName)) {
         parent.insertBefore(newEl, el);
-        
+
         while (el.firstChild) {
           parent.insertBefore(el.firstChild, newEl.nextSibling);
         }
@@ -74,6 +74,7 @@ function convertCustomHTML(config) {
         }
         el.replaceWith(newEl);
       }
+
       if (newTagName === 'title') {
         document.title = newEl.textContent;
       }
@@ -82,5 +83,3 @@ function convertCustomHTML(config) {
 }
 
 convertCustomHTML(htmlConfig);
-</script>
-
