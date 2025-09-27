@@ -1,5 +1,7 @@
-- name: jsDelivr Cache Purge
-  uses: egad13/purge-jsdelivr-cache@v1.1.0
+name: jsDelivr Cache Purge
+
+on: push
+
 jobs:
   purge-jsdelivr-cache:
     runs-on: ubuntu-20.04
