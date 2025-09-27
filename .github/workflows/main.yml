@@ -1,5 +1,7 @@
 name: 'Run jsDelivr-Purge'
 
+on: push
+
 jobs:
   jsdelivrpurge:
     permissions:
