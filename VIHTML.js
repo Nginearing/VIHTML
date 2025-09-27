@@ -29,9 +29,10 @@ function convertCustomHTML(config) {
     if (config.tags[tagName]) {
       const newTagName = config.tags[tagName];
       const newEl = document.createElement(newTagName);
- 
+      console.log(tagName);
       for (let attr of el.attributes) {
         const mappedAttr = config.attributes[attr.name];
+        console.log(attr.name);
         if (typeof mappedAttr === 'string') {
           newEl.setAttribute(mappedAttr, attr.value);
         } else if (typeof mappedAttr === 'function') {
