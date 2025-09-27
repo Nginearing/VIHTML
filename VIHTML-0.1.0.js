@@ -10,7 +10,8 @@ const htmlConfig = {
     'oba2': 'h2',
     'oba3': 'h3',
     'baksu': 'div',
-    'riso': 'img'
+    'riso': 'img',
+    'pr': 'br'
   },
   attributes: {
     'kran': 'src',
