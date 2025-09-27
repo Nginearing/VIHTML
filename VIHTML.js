@@ -59,19 +59,17 @@ function convertCustomHTML(config) {
       }
 
       const parent = el.parentNode;
-      
+
       if (voidElements.includes(newTagName)) {
         parent.insertBefore(newEl, el);
-      
+
         let insertPoint = newEl.nextSibling;
         
         while (el.firstChild) {
           parent.insertBefore(el.firstChild, insertPoint);
         }
-      
+
         el.remove();
-      }
-        
       } else {
         while (el.firstChild) {
           newEl.appendChild(el.firstChild);
