@@ -63,10 +63,8 @@ function convertCustomHTML(config) {
       if (voidElements.includes(newTagName)) {
         parent.insertBefore(newEl, el);
 
-        let insertPoint = newEl.nextSibling;
-        
         while (el.firstChild) {
-          parent.insertBefore(el.firstChild, insertPoint);
+          parent.insertBefore(el.firstChild, newEl.nextSibling);
         }
 
         el.remove();
