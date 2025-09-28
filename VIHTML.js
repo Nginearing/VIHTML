@@ -46,7 +46,7 @@ function convertCustomHTML(config) {
     if (config.tags[tagName]) {
       const newTagName = config.tags[tagName];
       const newEl = document.createElement(newTagName);
-
+      
       for (let attr of el.attributes) {
         const mappedAttr = config.attributes[attr.name];
         if (typeof mappedAttr === 'string') {
@@ -59,26 +59,22 @@ function convertCustomHTML(config) {
       }
 
       const parent = el.parentNode;
-      
+
       if (voidElements.includes(newTagName)) {
         parent.insertBefore(newEl, el);
-      
-        let insertPoint = newEl.nextSibling;
-        
+
         while (el.firstChild) {
-          parent.insertBefore(el.firstChild, insertPoint);
+          parent.insertBefore(el.firstChild, newEl.nextSibling);
         }
-      
+
         el.remove();
-      }
-        
       } else {
         while (el.firstChild) {
           newEl.appendChild(el.firstChild);
         }
         el.replaceWith(newEl);
       }
-
+      
       if (newTagName === 'title') {
         document.title = newEl.textContent;
       }
