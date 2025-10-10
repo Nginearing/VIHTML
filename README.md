@@ -1,5 +1,5 @@
 # VIHTML
-To add VIHTML support to your HTML file, just add this line somewhere below your content:
+To add VIHTML support to your HTML file, just add this line to your file:
 ```html
 <script src="https://nginearing.github.io/VIHTML/VIHTML.js"></script>
 ```
