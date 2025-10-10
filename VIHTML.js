@@ -18,7 +18,7 @@ const voidElements = [
 
 const htmlConfig = {
   tags: {
-    'tsui': 'head',
+    'atama': 'head',
     'presmi': 'button',
     'namae': 'title',
     'vikti': 'meta',
@@ -28,9 +28,7 @@ const htmlConfig = {
     'oba3': 'h3',
     'baksu': 'div',
     'riso': 'img',
-    'pr': 'br',
-    'pol: 'footer',
-    'ele': 'header'
+    'pr': 'br'
   },
   attributes: {
     'kran': 'src',
