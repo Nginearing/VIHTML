@@ -40,7 +40,9 @@ const htmlConfig = {
 };
 
 function convertCustomHTML(config) {
-  document.querySelectorAll('*').forEach(el => {
+  const allElements = Array.from(document.querySelectorAll('*')).reverse();
+
+  allElements.forEach(el => {
     const tagName = el.tagName.toLowerCase();
 
     if (config.tags[tagName]) {
@@ -62,11 +64,13 @@ function convertCustomHTML(config) {
 
       if (voidElements.includes(newTagName)) {
         parent.insertBefore(newEl, el);
-
+        let reference = newEl;
         while (el.firstChild) {
-          parent.insertBefore(el.firstChild, newEl.nextSibling);
+          const child = el.firstChild;
+          el.removeChild(child);
+          parent.insertBefore(child, reference.nextSibling);
+          reference = child;
         }
-
         el.remove();
       } else {
         while (el.firstChild) {
