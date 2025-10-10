@@ -1,12 +1,24 @@
-//CONFIG:
+// CONFIG:
 const voidElements = [
-  'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
-  'link', 'meta', 'param', 'source', 'track', 'wbr'
+  'area',
+  'base',
+  'br',
+  'col',
+  'embed',
+  'hr',
+  'img',
+  'input',
+  'link',
+  'meta',
+  'param',
+  'source',
+  'track',
+  'wbr'
 ];
 
 const htmlConfig = {
   tags: {
-    'atama': 'tsui',
+    'tsui': 'head',
     'presmi': 'button',
     'namae': 'title',
     'vikti': 'meta',
@@ -17,8 +29,8 @@ const htmlConfig = {
     'baksu': 'div',
     'riso': 'img',
     'pr': 'br',
-    'pol':'footer',
-    'ele':'header'
+    'pol': 'footer',
+    'ele': 'header'
   },
   attributes: {
     'kran': 'src',
@@ -38,7 +50,7 @@ function convertCustomHTML(config) {
     if (config.tags[tagName]) {
       const newTagName = config.tags[tagName];
       const newEl = document.createElement(newTagName);
-
+      
       for (let attr of el.attributes) {
         const mappedAttr = config.attributes[attr.name];
         if (typeof mappedAttr === 'string') {
@@ -68,7 +80,7 @@ function convertCustomHTML(config) {
         }
         el.replaceWith(newEl);
       }
-
+      
       if (newTagName === 'title') {
         document.title = newEl.textContent;
       }
@@ -76,6 +88,4 @@ function convertCustomHTML(config) {
   });
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  convertCustomHTML(htmlConfig);
-});
+convertCustomHTML(htmlConfig);
