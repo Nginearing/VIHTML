@@ -121,7 +121,7 @@
               link.rel = "ugc nofollow noopener";
               boldElement.appendChild(link);
             } else {
-              var textNode = document.createTextNode(message.Name);
+              var textNode = document.createTextNode(message.Name.toLowerCase());
               boldElement.appendChild(textNode);
             }
             messageHeader.appendChild(boldElement);
@@ -159,7 +159,7 @@
 
             // add actual quote
             var messageBody = document.createElement("blockquote");
-            messageBody.textContent = message.Text;
+            messageBody.textContent = message.Text.toLowerCase();
 
             messageContainer.appendChild(messageHeader);
             messageContainer.appendChild(messageBody);
@@ -215,3 +215,4 @@
   guestbooks___setupInfiniteScroll();
 
 })();
+
