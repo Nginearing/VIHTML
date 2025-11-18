@@ -3,6 +3,8 @@ To add VIHTML support to your HTML file, just add this line to your file:
 ```html
 <script src="https://nginearing.github.io/VIHTML/VIHTML.js"></script>
 ```
+There is a detailed guide [here](https://github.com/Nginearing/VIHTML/wiki/VIHTML-Mahaklarlehti) on each HTML tag (uten uwaki, na klar)
+
 Example VIHTML (preview at 
 [VIHTML Demo](https://codepen.io/leon-skee/pen/XJXXVaE)
 )
