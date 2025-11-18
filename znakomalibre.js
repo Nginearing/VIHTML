@@ -126,13 +126,32 @@
             }
             messageHeader.appendChild(boldElement);
 
+            function formatDateCustom(date) {
+              const months = [
+                "neomuai",
+                "hobitmuai",
+                "pranmuai",
+                "usomuai",
+                "ergomuai",
+                "veramuai",
+                "kaisermuai",
+                "vapamuai",
+                "suksumuai",
+                "biramuai",
+                "shagmuai",
+                "julmuai"
+              ];
+            
+              const day = date.getDate();
+              const month = months[date.getMonth()];
+              const year = date.getFullYear();
+            
+              return `${day}s ${month}, ${year}toshi`;
+            }
+            
             // add date
             var createdAt = new Date(message.CreatedAt);
-            var formattedDate = createdAt.toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
-              year: "numeric",
-            });
+            var formattedDate = formatDateCustom(createdAt)
 
             var dateElement = document.createElement("small");
             dateElement.textContent = " - " + formattedDate;
@@ -159,7 +178,7 @@
         }
       })
       .catch(function (error) {
-        console.error("Error fetching messages:", error);
+        console.error("finaki posta:", error);
         isLoading = false;
       });
   }
@@ -194,4 +213,5 @@
   guestbooks___populateQuestionChallenge();
   guestbooks___loadMessages(true); // Initial load
   guestbooks___setupInfiniteScroll();
+
 })();
